@@ -1,15 +1,6 @@
-hs\pvpRestrictions\commands\TrustCommand.class
-hs\pvpRestrictions\CombatTimer$1.class
-hs\pvpRestrictions\commands\TrustDenyCommand.class
-hs\pvpRestrictions\ElytraDisabledInCombat.class
-hs\pvpRestrictions\commands\UntrustCommand.class
-hs\pvpRestrictions\CombatTimer.class
-hs\pvpRestrictions\DisableEndPortals.class
-hs\pvpRestrictions\commands\TrustListCommand.class
-hs\pvpRestrictions\TrustManager.class
 hs\pvpRestrictions\PotionRestrictions.class
 hs\pvpRestrictions\DisableBundles.class
 hs\pvpRestrictions\PvpRestrictions.class
+hs\pvpRestrictions\DisableEndPortals.class
 hs\pvpRestrictions\TippedArrowRestriction.class
-hs\pvpRestrictions\commands\TrustAcceptCommand.class
 hs\pvpRestrictions\commands\EndPortalsOpened.class

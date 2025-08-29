@@ -3,7 +3,7 @@ version: '1.0-SNAPSHOT'
 main: hs.pvpRestrictions.PvpRestrictions
 api-version: '1.21'
 author: ___Pumpkinn
-description: PvP restrictions with combat timer and trust system
+description: PvP restrictions
 
 commands:
   endportals:
@@ -13,52 +13,14 @@ commands:
     permission: pvprestrictions.endportals
     permission-message: You don't have permission to use this command!
 
-  trust:
-    description: Send a trust request to another player
-    usage: /<command> <player>
-    permission: pvprestrictions.trust
-    permission-message: You don't have permission to use the trust system!
-
-  untrust:
-    description: Remove trust with another player
-    usage: /<command> <player>
-    permission: pvprestrictions.trust
-    permission-message: You don't have permission to use the trust system!
-    aliases: [distrust, removetrust]
-
-  trustlist:
-    description: List all your trusted allies
-    usage: /<command>
-    permission: pvprestrictions.trust
-    permission-message: You don't have permission to use the trust system!
-    aliases: [allies, trustallies, trustedplayers]
-
-  trustaccept:
-    description: Accept a pending trust request
-    usage: /<command>
-    permission: pvprestrictions.trust
-    permission-message: You don't have permission to use the trust system!
-    aliases: [accepttrust, trustyes]
-
-  trustdeny:
-    description: Deny a pending trust request
-    usage: /<command>
-    permission: pvprestrictions.trust
-    permission-message: You don't have permission to use the trust system!
-    aliases: [denytrust, rejecttrust, trustno]
 
 permissions:
   pvprestrictions.endportals:
     description: Allows toggling end portals
     default: op
 
-  pvprestrictions.trust:
-    description: Allows using trust system
-    default: true
-
   pvprestrictions.*:
     description: All PvP restrictions permissions
     default: op
     children:
       pvprestrictions.endportals: true
-      pvprestrictions.trust: true
