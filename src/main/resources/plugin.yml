@@ -1,0 +1,6 @@
+name: PvpRestrictions
+version: '1.0-SNAPSHOT'
+main: hs.pvpRestrictions.PvpRestrictions
+api-version: '1.21'
+author: ___Pumpkinn
+website: 
