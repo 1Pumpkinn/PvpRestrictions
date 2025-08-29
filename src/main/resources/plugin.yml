@@ -3,4 +3,17 @@ version: '1.0-SNAPSHOT'
 main: hs.pvpRestrictions.PvpRestrictions
 api-version: '1.21'
 author: ___Pumpkinn
-website: 
+website:
+
+commands:
+  endportals:
+    description: Enable or disable end portals
+    usage: /<command> [enable|disable|toggle|status]
+    aliases: [endportal, ep]
+    permission: pvprestrictions.endportals
+    permission-message: You don't have permission to use this command!
+
+permissions:
+  pvprestrictions.endportals:
+    description: Allows toggling end portals
+    default: op

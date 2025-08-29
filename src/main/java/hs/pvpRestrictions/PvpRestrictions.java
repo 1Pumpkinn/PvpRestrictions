@@ -19,6 +19,12 @@ public final class PvpRestrictions extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new TippedArrowRestriction(), this);
 
         getLogger().info("PvP Restrictions plugin has been enabled!");
+        getLogger().info("Features active:");
+        getLogger().info("- 15 second combat timer");
+        getLogger().info("- Bundle usage disabled");
+        getLogger().info("- Elytra disabled in combat");
+        getLogger().info("- Strength 2+ potions disabled");
+        getLogger().info("- Restricted tipped arrows disabled");
     }
 
     @Override
@@ -28,5 +34,9 @@ public final class PvpRestrictions extends JavaPlugin {
 
     public CombatTimer getCombatTimer() {
         return combatTimer;
+    }
+
+    public DisableEndPortals getEndPortalManager() {
+        return endPortalManager;
     }
 }

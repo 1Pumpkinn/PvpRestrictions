@@ -57,8 +57,9 @@ public class PotionRestrictions implements Listener {
                     event.setCancelled(true);
 
                     // Notify nearby players
-                    for (Player player : event.getAffectedEntities()) {
-                        if (player instanceof Player) {
+                    for (org.bukkit.entity.LivingEntity entity : event.getAffectedEntities()) {
+                        if (entity instanceof Player) {
+                            Player player = (Player) entity;
                             player.sendMessage("§cStrength 2+ splash potions are disabled!");
                         }
                     }
@@ -78,8 +79,9 @@ public class PotionRestrictions implements Listener {
                 event.setCancelled(true);
 
                 // Notify affected players
-                for (Player player : event.getAffectedEntities()) {
-                    if (player instanceof Player) {
+                for (org.bukkit.entity.LivingEntity entity : event.getAffectedEntities()) {
+                    if (entity instanceof Player) {
+                        Player player = (Player) entity;
                         player.sendMessage("§cStrength 2+ lingering potions are disabled!");
                     }
                 }
