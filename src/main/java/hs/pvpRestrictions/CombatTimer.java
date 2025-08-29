@@ -32,6 +32,14 @@ public class CombatTimer implements Listener {
         Player victim = (Player) event.getEntity();
         Player attacker = (Player) event.getDamager();
 
+        // Check if players are trusted allies - if so, don't put them in combat
+        TrustManager trustManager = plugin.getTrustManager();
+        if (trustManager != null && trustManager.isTrusted(victim, attacker)) {
+            // Players are allies, don't trigger combat timer
+            plugin.getLogger().info("Combat blocked between allies: " + attacker.getName() + " and " + victim.getName());
+            return;
+        }
+
         // Put both players in combat
         putInCombat(victim);
         putInCombat(attacker);
