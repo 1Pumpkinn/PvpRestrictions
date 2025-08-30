@@ -1,0 +1,8 @@
+# PvP Restrictions Configuration
+# This file stores persistent settings for the plugin
+
+# End Portal Settings
+end-portals:
+  # Whether end portals are enabled (true) or disabled (false)
+  # Default: false (disabled)
+  enabled: false
