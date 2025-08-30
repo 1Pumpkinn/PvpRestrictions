@@ -9,9 +9,11 @@ public final class PvpRestrictions extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Load/create config file
+        saveDefaultConfig();
 
-        // Initialize end portal manager
-        endPortalManager = new DisableEndPortals();
+        // Initialize end portal manager with this plugin instance
+        endPortalManager = new DisableEndPortals(this);
 
         // Register all event listeners
         getServer().getPluginManager().registerEvents(new DisableBundles(), this);
@@ -22,20 +24,23 @@ public final class PvpRestrictions extends JavaPlugin {
         // Register commands
         getCommand("endportals").setExecutor(new EndPortalsOpened(endPortalManager));
 
-
         getLogger().info("PvP Restrictions plugin has been enabled!");
+        getLogger().info("End portals are " + (endPortalManager.areEndPortalsEnabled() ? "ENABLED" : "DISABLED"));
     }
 
     @Override
     public void onDisable() {
-
+        // Config is automatically saved when setEndPortalsEnabled() is called
+        // But we can also save it here as a safety measure
+        if (endPortalManager != null) {
+            getConfig().set("end-portals.enabled", endPortalManager.areEndPortalsEnabled());
+            saveConfig();
+        }
 
         getLogger().info("PvP Restrictions plugin has been disabled!");
     }
 
-
     public DisableEndPortals getEndPortalManager() {
         return endPortalManager;
     }
-
 }
