@@ -22,7 +22,6 @@ public class EndPortalsOpened implements CommandExecutor {
         }
 
         if (args.length == 0) {
-            // Show current status
             boolean enabled = endPortalManager.areEndPortalsEnabled();
             sender.sendMessage("§eEnd portals are currently: " + (enabled ? "§aENABLED" : "§cDISABLED"));
             return true;
@@ -36,7 +35,6 @@ public class EndPortalsOpened implements CommandExecutor {
             case "true":
                 endPortalManager.setEndPortalsEnabled(true);
                 Bukkit.broadcastMessage("§a§lEnd portals have been ENABLED!");
-                sender.sendMessage("§aEnd portals are now enabled.");
                 break;
 
             case "disable":
@@ -44,15 +42,13 @@ public class EndPortalsOpened implements CommandExecutor {
             case "false":
                 endPortalManager.setEndPortalsEnabled(false);
                 Bukkit.broadcastMessage("§c§lEnd portals have been DISABLED!");
-                sender.sendMessage("§cEnd portals are now disabled.");
                 break;
 
             case "toggle":
                 boolean newState = !endPortalManager.areEndPortalsEnabled();
                 endPortalManager.setEndPortalsEnabled(newState);
-                String stateMessage = newState ? "§a§lENABLED" : "§c§lDISABLED";
-                Bukkit.broadcastMessage("§eEnd portals have been " + stateMessage + "!");
-                sender.sendMessage("§eEnd portals are now " + (newState ? "§aenabled" : "§cdisabled") + ".");
+                Bukkit.broadcastMessage("§eEnd portals have been " +
+                        (newState ? "§a§lENABLED" : "§c§lDISABLED") + "!");
                 break;
 
             case "status":
@@ -62,7 +58,6 @@ public class EndPortalsOpened implements CommandExecutor {
 
             default:
                 sender.sendMessage("§cUsage: /endportals <enable|disable|toggle|status>");
-                sender.sendMessage("§cOr just /endportals to check current status");
                 break;
         }
 
